@@ -7,6 +7,11 @@
 _poller.py
 **/_poller.py
 
+# Code solution : on ne distribue pas le corrige, chaque atelier est un guide.
+# Les scripts restent en local (pipeline de collecte) mais ne sont pas publies.
+corrige/
+**/corrige/
+
 # Secrets OAuth Gmail (atelier envoi)
 credentials.json
 token.json

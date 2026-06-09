@@ -18,9 +18,9 @@ Commence par le dossier **`Atelier-1-Collecte/`** et lis son `README.md`. Les at
 
 Chaque atelier est un dossier autonome, organisé de la même façon :
 
-- `README.md` : l'énoncé, ce qu'on construit et comment lancer le corrigé.
-- `corrige/` : le code solution, fonctionnel, à lire et à faire tourner.
-- `starter/` ou `exemple/` : le squelette à compléter, et un jeu de données d'exemple pour tester sans dépendre d'une vraie collecte.
+- `README.md` : un guide complet de A à Z. Il explique les notions, déroule la démarche étape par étape et pose des questions qui font réfléchir. Pas de solution toute faite à copier : tu construis l'outil toi-même.
+- `exemple/` : un jeu de données pour tester sans dépendre d'une vraie collecte.
+- `starter/` (atelier 1) : un squelette à compléter, un fichier par équipe.
 
 ## Le parcours
 
@@ -54,4 +54,4 @@ La leçon d'ingénieur : on choisit la source fiable pour le résultat, on garde
 
 ## État du dépôt
 
-Les quatre ateliers ci-dessus sont disponibles, énoncé et corrigé compris. Le matching par embeddings et la génération de CV par LLM sont les prolongements prévus de la chaîne.
+Les quatre ateliers ci-dessus sont disponibles sous forme de guides complets. Le matching par embeddings et la génération de CV par LLM sont les prolongements prévus de la chaîne.
