@@ -89,7 +89,7 @@ def rediger(cible) -> tuple[str, str]:
     entreprise = cible.get("entreprise", "").strip()
     chez = f" chez {entreprise}" if entreprise else ""
 
-    sujet = f"Candidature — {poste}"
+    sujet = f"Candidature : {poste}"
     corps = (
         f"{salutation}\n\n"
         f"Votre offre de {poste}{chez} correspond précisément à mon profil de "
