@@ -1,0 +1,7 @@
+email;prenom;nom;entreprise;fonction;offre_titre;offre_url;cv_path
+sophie.martin@example.com;Sophie;Martin;Capgemini;Talent Acquisition;Data Engineer H/F;https://example.com/offres/de-001;cv_adapte.pdf
+recrutement@example.com;;;BNP Paribas;RH;Ingenieur Data Big Data;https://example.com/offres/de-002;cv_adapte.pdf
+thomas.bernard@example.com;Thomas;Bernard;Doctolib;Tech Recruiter;Data Engineer (F/H);https://example.com/offres/de-003;cv_adapte.pdf
+jobs@example.com;;;Back Market;People;Senior Data Engineer;https://example.com/offres/de-004;cv_adapte.pdf
+claire.dubois@example.com;Claire;Dubois;Decathlon;Talent Partner;Data Engineer Cloud;https://example.com/offres/de-005;cv_adapte.pdf
+recrute-data@example.com;;;Veepee;DRH;Ingenieur Data Plateforme;https://example.com/offres/de-006;cv_adapte.pdf

@@ -1,78 +1,57 @@
-# Formation M2 Data Engineering — Plateforme d'automatisation de candidatures
+# Formation M2 Data Engineering : plateforme d'automatisation de candidatures
 
-Une formation pratique de 6 ateliers où les étudiants construisent, de bout en bout, une vraie plateforme : elle récupère les offres de Data Engineer en Île-de-France, les range dans une base, les matche à un CV, génère un CV adapté avec un LLM, et prépare l'envoi depuis un dashboard.
+Une formation pratique où les étudiants construisent, atelier après atelier, une vraie plateforme. Elle récupère les offres de Data Engineer en Île-de-France, les range dans une base, les affiche dans un tableau de bord, et prépare l'envoi des candidatures.
 
-Le fil rouge n'est pas un exercice scolaire. C'est leur propre recherche d'emploi. À la fin du module, chaque groupe a un produit qui tourne.
+Le fil rouge n'est pas un exercice scolaire abstrait. C'est leur propre recherche d'emploi. À la fin du parcours, chaque groupe a un produit qui tourne.
 
 ## Pour qui
 
-- Public : M2 Data Engineering, niveau hétérogène (du débutant Python/SQL au confirmé).
-- Format : 6 ateliers de 3h30, en binômes ou trinômes mixtes (un confirmé + un débutant par poste).
-- Prérequis : bases Python, notion de SQL, savoir cloner un repo. Le reste est guidé par un starter qui fonctionne déjà.
+- Public : M2 Data Engineering, niveau hétérogène, du débutant Python/SQL au confirmé.
+- Format : ateliers de 3h30, en binômes ou trinômes mixtes (un confirmé avec un débutant).
+- Prérequis : bases de Python, notion de SQL, savoir cloner un dépôt. Le reste est guidé.
 
-Le principe qui tient toute la formation : personne ne part de la page blanche, et chaque atelier a un objectif **Socle** (que tout le monde atteint) et un objectif **Bonus** (pour ceux qui avancent vite).
+Le principe qui tient toute la formation : personne ne part de la page blanche. Chaque atelier a un objectif Socle, que tout le monde atteint, et un objectif Bonus, pour ceux qui avancent vite.
 
-## Les 6 ateliers
+## Par où commencer
 
-| # | Atelier | Ce qu'on construit | Compétence |
-|---|---------|--------------------|------------|
-| 1 | **Opération 5000** | Collecter 5000 recruteurs/DRH data d'IDF dans un `contacts.csv` propre, multi-sources | Ingestion, API, scraping |
-| 2 | **Le coffre-fort** | Charger ce CSV dans une vraie base Postgres, sans doublon, requêtable | Modélisation, upsert idempotent |
-| 3 | Pipeline | Automatiser l'ingestion (planifiée, avec logs et reprise sur erreur) | Orchestration |
-| 4 | Matching | Embeddings + pgvector : sortir le top 10 des offres proches d'un CV | Recherche sémantique |
-| 5 | CV adapté | L'API Claude reformule le CV pour une offre précise, sans rien inventer | Intégration LLM |
-| 6 | Dashboard | Front Next.js façon freework + file d'envoi avec validation humaine | Dashboard, RGPD opérationnel |
+Commence par le dossier **`Atelier-1-Collecte/`** et lis son `README.md`. Les ateliers s'enchaînent dans l'ordre : la sortie de l'un est l'entrée du suivant.
 
-Le `contacts.csv` de l'atelier 1 est le carburant de toute la chaîne : l'atelier 2 le charge en base, l'atelier 4 le matche aux offres, l'atelier 5 génère le CV, l'atelier 6 prépare l'envoi.
+Chaque atelier est un dossier autonome, organisé de la même façon :
 
-## Structure du dépôt
+- `README.md` : l'énoncé, ce qu'on construit et comment lancer le corrigé.
+- `corrige/` : le code solution, fonctionnel, à lire et à faire tourner.
+- `starter/` ou `exemple/` : le squelette à compléter, et un jeu de données d'exemple pour tester sans dépendre d'une vraie collecte.
 
-```
-00-Programme/      Le programme complet (objectifs, progression, évaluation)
-01-Ateliers/       Les briefs détaillés à animer en séance (storytelling + déroulé minuté)
-02-Corrige/        Le code corrigé, fonctionnel, prêt à projeter
-02-RGPD/           La note de cadrage RGPD (transversale, posée dès l'atelier 1)
-03-Starter/        Les squelettes distribués aux étudiants (avec des TODO à compléter)
-```
+## Le parcours
 
-## Atelier 1 — Opération 5000 : d'où vient vraiment le volume
+| Atelier | Dossier | Ce qu'on construit | Compétence |
+|---------|---------|--------------------|------------|
+| 1. Collecte | [`Atelier-1-Collecte/`](Atelier-1-Collecte/README.md) | Rassembler des milliers de contacts et offres data d'IDF dans un CSV propre, multi-sources | Ingestion, API, scraping |
+| 2. Stockage | [`Atelier-2-Stockage/`](Atelier-2-Stockage/README.md) | Charger ce CSV dans une base Postgres sans jamais créer de doublon | Modélisation, upsert idempotent |
+| 3. Dashboard | [`Atelier-3-Dashboard/`](Atelier-3-Dashboard/README.md) | Un tableau de bord Next.js des offres, avec filtres, tri et graphiques | Front, dataviz |
+| 4. Envoi | [`Atelier-4-Envoi/`](Atelier-4-Envoi/README.md) | Préparer des candidatures personnalisées en brouillons Gmail, validées à la main | API Gmail, idempotence |
 
-C'est le point que les étudiants vont questionner, autant l'assumer franchement : **le scraping artisanal ne fait pas les 5000. L'API France Travail, oui.**
+L'enchaînement : l'atelier 1 produit le CSV de contacts, l'atelier 2 le charge en base, l'atelier 3 rend la donnée lisible, l'atelier 4 prépare l'envoi. Deux extensions naturelles prolongent la chaîne : le matching d'un CV aux offres par embeddings, et la génération d'un CV adapté avec un LLM.
+
+## D'où vient le volume à l'atelier 1
+
+C'est la question que les étudiants vont poser, autant l'assumer : le scraping artisanal ne fait pas le volume, l'API France Travail oui.
 
 | Source | Volume réaliste | Pourquoi |
 |--------|-----------------|----------|
-| France Travail (API officielle) | 3000 à 5000 à elle seule | 8 métiers data × 8 départements, paginé, stable, légal |
+| France Travail (API officielle) | 3000 à 5000 à elle seule | 8 métiers data sur 8 départements, paginé, stable, légal |
 | Job boards (HelloWork, APEC) | 500 à 1500 | Scraping HTML, dépend de la résistance du site |
-| LinkedIn | ~50 par étudiant | Volontairement bridé pour ne pas griller les comptes |
+| LinkedIn | environ 50 par étudiant | Volontairement bridé pour ne pas griller les comptes |
 | Annuaires, Welcome to the Jungle | 300 à 800 | Pages structurées |
 
-La leçon d'ingénieur derrière : on choisit la source fiable pour le résultat (l'API), on garde le scraping fragile pour les cas où il n'y a pas d'API. Le scraping LinkedIn, c'est la *compétence* qu'on apprend, pas le *volume* qu'on produit.
-
-### Lancer la collecte (atelier 1)
-
-```bash
-pip install requests beautifulsoup4 pandas python-dotenv playwright
-playwright install chromium
-
-# Clés France Travail dans 02-Corrige/.env (non commité) :
-#   FT_CLIENT_ID=...
-#   FT_CLIENT_SECRET=...
-
-cd 02-Corrige
-python collecte_france_travail.py   # le gros du volume
-python fusion.py                    # agrège tous les CSV, dédoublonne, vérifie les 5000
-```
-
-`fusion.py` affiche le bilan : nombre par source, doublons retirés, et la ligne finale `OBJECTIF ATTEINT` ou `Il manque`. C'est le moment fort de la séance, à projeter en direct.
-
-Pour obtenir les clés : créer un compte sur https://francetravail.io, créer une application, demander l'accès à « Offres d'emploi v2 », récupérer le `client_id` et le `client_secret`. Compter quelques minutes de propagation après l'abonnement avant que l'API réponde.
+La leçon d'ingénieur : on choisit la source fiable pour le résultat, on garde le scraping fragile pour les cas où il n'y a pas d'API. Le scraping LinkedIn, c'est la compétence qu'on apprend, pas le volume qu'on produit.
 
 ## Secrets et RGPD
 
-- Les clés API ne sont **jamais** commitées. Elles vivent dans un `.env` local, exclu par `.gitignore`.
-- Pour les recruteurs/DRH : pas de collecte massive ni de revente. Enrichissement à la demande sur une offre précise, base légale « intérêt légitime », minimisation, conservation limitée. Détails dans `02-RGPD/`.
-- Envoi de candidatures : toujours une validation humaine avant départ. Pas d'automatisation complète. La valeur pédagogique est la même en semi-auto, sans le risque juridique.
+- Les clés d'API ne sont jamais commitées. Elles vivent dans un `.env` local, exclu par `.gitignore`. Un modèle est fourni dans `Atelier-1-Collecte/starter/.env.example`.
+- Pour les contacts recruteurs : pas de collecte massive ni de revente. On travaille sur des données professionnelles, base légale de l'intérêt légitime, minimisation et conservation limitée.
+- Envoi de candidatures : toujours une validation humaine avant départ, jamais d'automatisation complète. La valeur pédagogique est la même en semi-automatique, sans le risque juridique.
 
-## État du projet
+## État du dépôt
 
-Atelier 1 et atelier 2 disponibles (brief + corrigé). Ateliers 3 à 6 décrits dans le programme, briefs détaillés à venir.
+Les quatre ateliers ci-dessus sont disponibles, énoncé et corrigé compris. Le matching par embeddings et la génération de CV par LLM sont les prolongements prévus de la chaîne.

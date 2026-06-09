@@ -1,0 +1,11 @@
+prenom;nom;fonction;entreprise;secteur;ville;source;url_profil;email;date_collecte
+;MARTIN - Responsable recrutement;Recruteur;Capgemini;Conseil et services informatiques;Paris (75);france_travail;https://candidat.francetravail.fr/offres/recherche/detail/0001;recrutement.idf@example.com;2026-06-02
+;;;BNP Paribas;Banque, assurance;Nanterre (92);france_travail;https://candidat.francetravail.fr/offres/recherche/detail/0002;;2026-06-02
+;DUBOIS;Recruteur;Doctolib;Edition de logiciels;Levallois-Perret (92);france_travail;https://candidat.francetravail.fr/offres/recherche/detail/0003;data.jobs@example.com;2026-06-03
+;;;Decathlon;Commerce de detail;Saint-Denis (93);france_travail;https://candidat.francetravail.fr/offres/recherche/detail/0004;;2026-06-03
+;BERNARD - RH;Recruteur;Back Market;Commerce en ligne;Paris (75);france_travail;https://candidat.francetravail.fr/offres/recherche/detail/0005;careers@example.com;2026-06-04
+;;;Veepee;Commerce en ligne;La Plaine Saint-Denis (93);france_travail;https://candidat.francetravail.fr/offres/recherche/detail/0006;;2026-06-04
+;PETIT;Recruteur;Sopra Steria;Conseil et services informatiques;Courbevoie (92);france_travail;https://candidat.francetravail.fr/offres/recherche/detail/0007;recrute.data@example.com;2026-06-05
+;;;Societe Generale;Banque, assurance;Fontenay-sous-Bois (94);france_travail;https://candidat.francetravail.fr/offres/recherche/detail/0008;;2026-06-05
+;LEROY - Talent Acquisition;Recruteur;Dataiku;Edition de logiciels;Paris (75);france_travail;https://candidat.francetravail.fr/offres/recherche/detail/0009;talent@example.com;2026-06-06
+;;;Orange;Telecommunications;Chatillon (92);france_travail;https://candidat.francetravail.fr/offres/recherche/detail/0010;;2026-06-06

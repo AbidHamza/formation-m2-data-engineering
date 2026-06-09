@@ -1,18 +1,20 @@
-# Secrets - JAMAIS commités
+# Secrets, jamais commites
 .env
 *.env
 **/.env
 
-# Outil interne formateur (ne pas distribuer)
-_attente_et_collecte.py
+# Outils internes du formateur (ne pas distribuer aux eleves)
 _poller.py
+**/_poller.py
 
 # Secrets OAuth Gmail (atelier envoi)
 credentials.json
 token.json
 
-# Fichiers générés par les scripts de collecte
+# Donnees collectees ou de demo (jamais commitees)
 *.csv
+# sauf les jeux d'exemple pedagogiques, qui eux doivent etre versionnes
+!**/exemple/*.csv
 
 # Python
 __pycache__/
@@ -20,7 +22,7 @@ __pycache__/
 .venv/
 venv/
 
-# Node (ateliers 6)
+# Node (atelier dashboard)
 node_modules/
 .next/
 
