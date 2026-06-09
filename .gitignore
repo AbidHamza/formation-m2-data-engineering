@@ -1,0 +1,25 @@
+# Secrets - JAMAIS commités
+.env
+*.env
+**/.env
+
+# Outil interne formateur (ne pas distribuer)
+_attente_et_collecte.py
+
+# Fichiers générés par les scripts de collecte
+*.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node (ateliers 6)
+node_modules/
+.next/
+
+# Divers
+.DS_Store
+Thumbs.db
+.vscode/
