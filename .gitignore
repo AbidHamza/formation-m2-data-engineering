@@ -5,6 +5,11 @@
 
 # Outil interne formateur (ne pas distribuer)
 _attente_et_collecte.py
+_poller.py
+
+# Secrets OAuth Gmail (atelier envoi)
+credentials.json
+token.json
 
 # Fichiers générés par les scripts de collecte
 *.csv
